@@ -1,14 +1,16 @@
 import styled from "styled-components";
-import BlogCard from "./components/BlogCard/BlogCard";
+import FriendList from "components/FriendList/FriendList";
 
 function App() {
   return (
-    <ContainerTest>
-      <BlogCard />
-    </ContainerTest>
+    <Container>
+      <FriendList />
+    </Container>
   );
 }
 
-const ContainerTest = styled.div``;
+const Container = styled.div`
+background-color:#e7ecf2;
+height: 100vh;`
 
 export default App;
