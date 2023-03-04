@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FriendListItem = ({data}) => {
     return (
 <Item>
-  <Status />
+  <Status isOnline={data.isOnline}/>
   < Avatar src={data.avatar} alt="User avatar"  />
   <Name>{data.name}</Name>
 </Item>
@@ -11,6 +11,7 @@ const FriendListItem = ({data}) => {
 }
 
 const Item = styled.li`
+
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -25,11 +26,12 @@ const Item = styled.li`
 `
 const Status = styled.span`
     margin-left: 20px;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
-    background-color: green;
-`
+    background-color:${(pops) => pops.isOnline ? "tomato" : "green" };
+    `
+
 const Avatar = styled.img`
     width: 48px;
 `

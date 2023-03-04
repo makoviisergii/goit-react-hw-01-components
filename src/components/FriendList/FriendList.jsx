@@ -11,12 +11,13 @@ const FriendList = () => {
 };
 
 const List = styled.ul`
+padding: 0;
 list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 `
 
 export default FriendList;
