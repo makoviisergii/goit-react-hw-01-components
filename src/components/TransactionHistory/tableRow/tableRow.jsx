@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 function TableRow(props) {
   const { item, number } = props;
   const { type, amount, currency } = item;
+  console.log(props)
   return (
     <TrBox number={number}>
       
@@ -21,5 +23,15 @@ padding: 8px 0;
 const TrBox = styled.tr`
 background-color:${(props) => props.number%2 === 0 ? "lightgray" : "white"  } ;
  `
+
+TableRow.propTypes = {
+    number: PropTypes.number.isRequired,
+    data: PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+}
+
 
 export default TableRow;

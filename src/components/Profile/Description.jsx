@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import PropTypes from 'prop-types';
 
 const Description = ({data}) => {
  const  {avatar, username, tag, location } = data; 
@@ -45,4 +45,16 @@ const Avatar =styled.img`
     border-radius: 50%;
     margin: 25px 0;
 `
+
+Description.propTypes = {
+    data: PropTypes.shape({
+      avatar: PropTypes.string,
+      username: PropTypes.string,
+      tag: PropTypes.string,
+      location: PropTypes.string,
+    }).isRequired,
+  }
+  
+
+
 export default Description;

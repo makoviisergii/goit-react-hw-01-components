@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types'; 
 
 const FriendListItem = ({data}) => {
     return (
@@ -39,6 +40,12 @@ const Name = styled.p`
     font-size: 32px;
     font-weight: 500;
 `
-
+FriendListItem.propTypes = {
+    data: PropTypes.shape({
+    isOnline: PropTypes.bool,
+    avatar: PropTypes.string,
+    name: PropTypes.string,
+}).isRequired,
+}
 
 export default FriendListItem;

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types'; 
+
 
 const Statslist = ({data}) => {
     const {followers, views, likes} =data.stats
@@ -50,7 +52,13 @@ const Numbers = styled.span`
   margin-bottom: 20px ;
 `
 
-
+Statslist.propTypes = {
+  data: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }).isRequired,
+}
 
 
 export default Statslist;
