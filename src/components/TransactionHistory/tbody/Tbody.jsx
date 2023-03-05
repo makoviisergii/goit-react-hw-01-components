@@ -3,7 +3,7 @@ const Tbody = (props) => {
   return (
     <tbody>
       {props.items.map((item, index) => {
-        return <TableRow key={item.id} number={index + 1} item={item} />;
+        return <TableRow key={item.id} number={index} item={item} />;
       })}
     </tbody>
   );

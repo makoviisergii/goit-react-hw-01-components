@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Table from '../table/table';
-import Thead from '../thead/thead'
+import Thead from '../thead/thead';
 import Tbody from '../tbody/Tbody';
-import transactions from '../../TransactionHistory/transactions.json';
+import PropTypes from 'prop-types';
 
-const TransactionHistory = () => {
+const TransactionHistory = ({ transactions }) => {
   return (
     <TableBox>
       <Table>
@@ -12,17 +12,26 @@ const TransactionHistory = () => {
         <Tbody items={transactions} />
       </Table>
     </TableBox>
-
   );
 };
 
-const TableBox = styled.div`
-  width: 350px;
- border-radius: 5px;
-  box-shadow: 0px 5px 9px 0px rgb(0 0 0 / 75%);
--webkit-box-shadow: 0px 5px 9px 0px rgb(0 0 0 / 75%); 
- overflow: hidden;
- margin-bottom: 20px;
-`
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default TransactionHistory;
+
+const TableBox = styled.div`
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 9px 0px rgb(0 0 0 / 75%);
+  -webkit-box-shadow: 0px 5px 9px 0px rgb(0 0 0 / 75%);
+  overflow: hidden;
+  margin-bottom: 20px;
+`;
