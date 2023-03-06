@@ -5,7 +5,7 @@ import Statistics from 'components/Statistics/Statistics';
 import TransactionHistory from 'components/TransactionHistory/Transactions/Transactions';
 import user from './data/user.json';
 import stat from './data/stat.json';
-import frienns from './data/friends.json';
+import friends from './data/friends.json';
 import transactions from './data/transactions.json';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Container>
       <Profile user={user} />
       <Statistics stat={stat} title="Upload starts" />
-      <FriendList frienns={frienns} />
+      <FriendList friends={friends} />
       <TransactionHistory transactions={transactions} />
     </Container>
   );
