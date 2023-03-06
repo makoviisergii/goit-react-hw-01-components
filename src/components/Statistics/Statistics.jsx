@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Statistics = props => {
   return (
     <StatisticsListBox>
-      { props.title ? (<StatisticsTitle>{props.title}</StatisticsTitle>) : ("")}
+      {props.title && <StatisticsTitle>{props.title}</StatisticsTitle>}
       <StatisticsList stat={props.stat} />
     </StatisticsListBox>
   );
