@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StatisticsList = ({ stat }) => {
   return (
@@ -14,6 +15,16 @@ const StatisticsList = ({ stat }) => {
       })}
     </StatslistBox>
   );
+};
+
+StatisticsList.propTypes = {
+  stat: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ),
 };
 
 export default StatisticsList;

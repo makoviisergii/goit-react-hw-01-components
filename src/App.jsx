@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import FriendList from 'components/FriendList/FriendList';
 import Profile from 'components/Profile/Profile';
 import Statistics from 'components/Statistics/Statistics';
-import TransactionHistory from 'components/TransactionHistory/transactions/transactionsHistory';
+import TransactionHistory from 'components/TransactionHistory/Transactions/Transactions';
 import user from './data/user.json';
 import stat from './data/stat.json';
 import frienns from './data/friends.json';

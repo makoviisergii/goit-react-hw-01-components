@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Statistics = props => {
   return (
     <StatisticsListBox>
-      <StatisticsTaitle>{props.title}</StatisticsTaitle>
+      { props.title ? (<StatisticsTitle>{props.title}</StatisticsTitle>) : ("")}
       <StatisticsList stat={props.stat} />
     </StatisticsListBox>
   );
@@ -24,7 +24,7 @@ Statistics.propTypes = {
 
 export default Statistics;
 
-const StatisticsTaitle = styled.div`
+const StatisticsTitle = styled.h2`
   height: 100px;
   color: gray;
   display: flex;

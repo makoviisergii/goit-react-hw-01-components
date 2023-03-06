@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 
 const Statslist = ({ stats }) => {
   const { followers, views, likes } = stats;
@@ -18,6 +20,14 @@ const Statslist = ({ stats }) => {
       </List>
     </StatslistBox>
   );
+};
+
+Statslist.propTypes = {
+    stats: PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }).isRequired,
 };
 
 export default Statslist;

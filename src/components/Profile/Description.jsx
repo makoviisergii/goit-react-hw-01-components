@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Description = ({ userdata }) => {
   const { avatar, username, tag, location } = userdata;
@@ -11,6 +12,16 @@ const Description = ({ userdata }) => {
     </DescriptionBox>
   );
 };
+
+Description.propTypes = {
+  userdata: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 
 export default Description;
 

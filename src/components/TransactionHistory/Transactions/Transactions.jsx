@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Table from '../table/table';
-import Thead from '../thead/thead';
-import Tbody from '../tbody/Tbody';
+import Table from '../Table/Table';
+import Thead from '../Thead/Thead';
+import Tbody from '../Tbody/Tbody';
 import PropTypes from 'prop-types';
 
 const TransactionHistory = ({ transactions }) => {

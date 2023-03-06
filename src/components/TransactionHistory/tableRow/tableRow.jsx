@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 
 function TableRow(props) {
   const { item, number } = props;
@@ -11,6 +13,17 @@ function TableRow(props) {
     </TrBox>
   );
 }
+
+TableRow.propTypes = {
+  number: PropTypes.number.isRequired,
+  props: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default TableRow;
 

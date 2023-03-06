@@ -3,11 +3,13 @@ import FriendListItem from './FriendListItem';
 import PropTypes from 'prop-types';
 
 const FriendList = ({ frienns }) => {
+
   return (
     <List>
-      {frienns.map(item => (
-        <FriendListItem key={item.id} item={item} />
-      ))}
+      {frienns.map(item => {
+        const { isOnline, avatar, name, id } = item;
+        return(<FriendListItem key={id} item={{isOnline, avatar, name}} />
+      )})}
     </List>
   );
 };

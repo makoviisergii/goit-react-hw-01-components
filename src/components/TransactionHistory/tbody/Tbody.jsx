@@ -1,4 +1,7 @@
-import TableRow from '../tableRow/tableRow';
+import TableRow from '../TableRow/TableRow';
+import PropTypes from 'prop-types';
+
+
 const Tbody = (props) => {
   return (
     <tbody>
@@ -8,5 +11,17 @@ const Tbody = (props) => {
     </tbody>
   );
 };
+
+Tbody.propTypes = {
+  props: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
+};
+
+
 
 export default Tbody;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const FriendListItem = ({ item }) => {
   const { isOnline, avatar, name } = item;
@@ -10,6 +11,16 @@ const FriendListItem = ({ item }) => {
     </Item>
   );
 };
+
+FriendListItem.propTypes = {
+  item: PropTypes.shape({
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+};
+
+
 
 export default FriendListItem;
 
